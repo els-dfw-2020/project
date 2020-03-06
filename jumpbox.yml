@@ -8,7 +8,7 @@ Resources:
   jumpbox:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-0e2ff28bfb72a4e45 
+      ImageId: ami-002cc39e7bf021a77
       KeyName:
         Ref: "KeyName"
       UserData:
@@ -17,6 +17,6 @@ Resources:
             - "\n"
             - - "#!/bin/bash -xe"
               - yum update -y aws-cfn-bootstrap
-              - curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o  "awscli-bundle.zip"
+              - curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
               - unzip  awscli-bundle.zip
               - sudo  ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
